@@ -4,6 +4,7 @@ import CardProduto from '../../components/CardProduto';
 import Barra from '../../components/Barra';
 import Header from '../../components/Header';
 import CardMaisVendido from '../../components/CardMaisVendido';
+import ModalCarrinho from '../../components/ModalCarrinho';
 import BotaoVerCesta from '../../components/BotaoVerCesta';
 import  styles from './styles';
 
@@ -33,6 +34,7 @@ export default class Home extends Component {
            </ScrollView>
           </View>
           <BotaoVerCesta />
+          <ModalCarrinho />
         </View>
     );
   }
