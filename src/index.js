@@ -5,7 +5,10 @@ import Home from './screens/Home';
 
 const AppNavigator = createStackNavigator({
     Home: {
-      screen: Home
+      screen: Home,
+      navigationOptions:{
+        header: null
+      }
     }
 });
   

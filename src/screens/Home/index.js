@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import CardProduto from '../../components/CardProduto';
 import Barra from '../../components/Barra';
+import Header from '../../components/Header';
 import  styles from './styles';
 
 export default class Home extends Component {
   render() {
     return (
         <View style={styles.container}>
+          <Header />
           <Barra texto="Ofertas" />
           <View>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrolProduto}>
