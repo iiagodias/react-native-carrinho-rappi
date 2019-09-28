@@ -3,6 +3,7 @@ import { View, ScrollView, Text } from 'react-native';
 import CardProduto from '../../components/CardProduto';
 import Barra from '../../components/Barra';
 import Header from '../../components/Header';
+import CardMaisVendido from '../../components/CardMaisVendido';
 import  styles from './styles';
 
 export default class Home extends Component {
@@ -22,6 +23,14 @@ export default class Home extends Component {
             </ScrollView>
           </View>
           <Barra texto="Produtos Mais Vendidos" />
+          <View>
+           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrolProduto}>
+             <CardMaisVendido />
+             <CardMaisVendido />
+             <CardMaisVendido />
+             <CardMaisVendido />
+           </ScrollView>
+          </View>
         </View>
     );
   }
