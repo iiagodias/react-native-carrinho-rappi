@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Modal, TouchableOpacity } from 'react-native';
+import CardProdutoCarrinho from "../CardProdutoCarrinho";
 import Icon from 'react-native-vector-icons/EvilIcons';
 import Icone from 'react-native-vector-icons/FontAwesome5';
 import  styles from './styles';
@@ -45,7 +46,8 @@ export default class ModalCarrinho extends Component {
               </View>
 
               <View style={styles.boxProdutos}>
-                <Text>oi</Text>
+                <CardProdutoCarrinho />
+                <CardProdutoCarrinho />
               </View>
 
             </View>
