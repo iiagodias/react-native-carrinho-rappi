@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -15,9 +15,10 @@ export default class CardEndereco extends Component {
             <Text style={styles.txtTipo}>Trabalho</Text>
             <Icon style={styles.iconeTipo} color="#828282" size={20} name="briefcase" />
           </View>
-
         </View>
-        <View style={styles.infoMapa}></View>
+        <View style={styles.infoMapa}>
+          <Image style={styles.imagem} source={require("../../assets/image/mapa.png")} />
+        </View>
       </View>
     );
   }

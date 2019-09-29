@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
     boxBntContinuar:{
         alignItems: "center",
         padding: 10,
-        backgroundColor: "rgba(207, 207, 207, 0.1)",
+        backgroundColor: "#f5f5f5",
     },
     bntContinuar:{
         backgroundColor: "#2ecc71",

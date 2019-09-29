@@ -4,11 +4,13 @@ import styles from './styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useSelector } from 'react-redux';
 
-export default function Header() {
+export default function Header(props) {
 
   const total = useSelector(state => {
     return state.data.total;
   });
+
+  const { search } = props;
 
   return (
     <ImageBackground source={{ uri: "https://www.freewebheaders.com/wp-content/gallery/food/various-spices-and-herbs-website-header.jpg" }} style={styles.background}>
@@ -23,6 +25,7 @@ export default function Header() {
             style={styles.input}
             placeholder="Buscar produtos"
             underlineColorAndroid="rgba(0,0,0,0.0)"
+            onChangeText={text => search(text)}
           />
         </View>
 

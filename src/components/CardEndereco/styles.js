@@ -6,11 +6,12 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         borderBottomColor: "rgba(207, 207, 207, 0.2)",
         borderBottomWidth: 2,
-        paddingBottom: 10
+        paddingBottom: 10,
+        backgroundColor: "#ffff"
     },
     infoMapa:{
         width: "28%",
-        height: "100%",
+        height: 100,
         backgroundColor: "#fff",
         elevation: 10,
         shadowColor: "#000",
@@ -44,6 +45,10 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingTop: 5,
         paddingBottom: 5
+    },
+    imagem:{
+        width: "100%",
+        height: "100%"
     }
 });
 

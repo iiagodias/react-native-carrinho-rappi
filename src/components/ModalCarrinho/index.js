@@ -48,18 +48,21 @@ export default function ModalCarrinho(props) {
             </View>
           </View>
           <LinhaPrime />
-          <ScrollView>
-            <CardEndereco />
-            <View style={styles.boxProdutos}>
-              {produtos.map(item =>
-                <CardProdutoCarrinho key={item.id} produto={item} />
-              )}
-            </View>
+          <ScrollView style={styles.scrollProduto} showsVerticalScrollIndicator={false}>
+
             {produtos.length ?
-              <View style={styles.boxEsvaziar}>
-                <TouchableOpacity onPress={() => esvaziar()}>
-                  <Text style={styles.textEsvaziar}>Esvaziar</Text>
-                </TouchableOpacity>
+              <View>
+                <CardEndereco />
+                <View style={styles.boxProdutos}>
+                  {produtos.map(item =>
+                    <CardProdutoCarrinho key={item.id} produto={item} />
+                  )}
+                </View>
+                <View style={styles.boxEsvaziar}>
+                  <TouchableOpacity onPress={() => esvaziar()}>
+                    <Text style={styles.textEsvaziar}>Esvaziar</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
               :
               <View style={styles.boxNenhum}>

@@ -49,13 +49,13 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat-Bold'
     },
     boxProdutos:{
-        backgroundColor: "rgba(207, 207, 207, 0.1)",
+        backgroundColor: "#f5f5f5",
         flex: 1
     },
     boxEsvaziar:{
         alignItems:"center",
         padding: 20,
-        backgroundColor: "rgba(207, 207, 207, 0.1)",
+        backgroundColor: "#f5f5f5",
     },
     textEsvaziar:{
         color: "#828282",
@@ -72,6 +72,9 @@ const styles = StyleSheet.create({
         color: "#696969",
         fontFamily: 'Montserrat-Medium',
         fontSize: 15
+    },
+    scrollProduto:{
+        backgroundColor: "#f5f5f5",
     }
 });
 
