@@ -1,24 +1,49 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import BotaoIncremento from '../BotaoIncremento';
+import { useDispatch, useSelector } from 'react-redux';
 import  styles from './styles';
+import addProduto from '../../actions/addProduto';
+import _ from "lodash";
+import removerProduto from '../../actions/removerProduto'
 
+export default function CardProdutoCarrinho(props){
 
-export default class CardProdutoCarrinho extends Component {
-  render() {
-    return (
-        <View style={styles.container}>
-          <View style={styles.boxImagem}>
-            <Image style={styles.imagem} source={{uri: "https://conteudo.imguol.com.br/c/noticias/2013/10/11/bombril---esponja-de-aco-1381506271857_615x470.jpg"}} />
-          </View>
-          <View style={styles.boxinfo}>
-            <Text numberOfLines={2} style={styles.tituloProduto}>Presendo da sadia</Text>
-            <Text style={styles.txtValor}>R$ 20,84</Text>
-          </View>
-          <View style={styles.boxBotao}>
-            <BotaoIncremento />
-          </View>
-        </View>
-    );
+  const { produto } = props;
+
+  const quantidade = useSelector(state => {
+    const produtoEspecifico = _.find(state.data.produtos, { id: produto.id });
+    if (!produtoEspecifico) {
+      return 0
+    }
+    return produtoEspecifico.quantidade;
+  });
+
+  
+
+  const dispatch = useDispatch();
+
+  function add() {
+    dispatch(addProduto(produto))
   }
+  function remover() {
+    dispatch(removerProduto(produto))
+  }
+
+
+  return (
+      <View style={styles.container}>
+        <View style={styles.boxImagem}>
+          <Image style={styles.imagem} source={{uri: produto.image}} />
+        </View>
+        <View style={styles.boxinfo}>
+          <Text numberOfLines={2} style={styles.tituloProduto}>{produto.description}</Text>
+          <Text style={styles.txtValor}>R$ {produto.price}</Text>
+        </View>
+        <View style={styles.boxBotao}>
+          <BotaoIncremento quantidade={quantidade} add={add} remover={remover} />
+        </View>
+      </View>
+  );
 }
+

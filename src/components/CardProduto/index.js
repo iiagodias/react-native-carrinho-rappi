@@ -1,25 +1,44 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import BotaoIncremento from '../BotaoIncremento';
-import  styles from './styles';
+import styles from './styles';
+import { useDispatch, useSelector } from 'react-redux';
+import addProduto from '../../actions/addProduto';
+import _ from "lodash";
+import removerProduto from '../../actions/removerProduto'
 
+export default function CardProduto(props) {
+  const { produto } = props;
 
-export default class CardProduto extends Component {
-  render() {
-    const {quantidade} = this.props;
-    return (
-        <View style={styles.container}>
-          <View style={styles.boxImagem}>
-            <Image style={styles.imagem} source={{uri: "https://conteudo.imguol.com.br/c/noticias/2013/10/11/bombril---esponja-de-aco-1381506271857_615x470.jpg"}} />
-          </View>
-          <View style={styles.boxValor}>
-            <Text style={styles.textValor}>R$ 1.69</Text>
-          </View>
-          <View style={styles.boxDescricao}>
-            <Text ellipsizeMode="tail" numberOfLines={1} style={styles.textDescricao}>Presunto Sadia</Text>
-          </View>
-          <BotaoIncremento quantidade={quantidade} />
-        </View>
-    );
+  const quantidade =  useSelector(state => {
+    const produtoEspecifico  = _.find(state.data.produtos, {id: produto.id});
+    if (!produtoEspecifico){
+      return 0
+    }
+    return produtoEspecifico.quantidade;
+  });
+  
+  const dispatch = useDispatch();
+
+  function add() {
+    dispatch(addProduto(produto))
   }
+  function remover() {
+    dispatch(removerProduto(produto))
+  }
+  return (
+    <View style={styles.container}>
+      <View style={styles.boxImagem}>
+        <Image style={styles.imagem} source={{ uri: produto.image }} />
+      </View>
+      <View style={styles.boxValor}>
+        <Text style={styles.textValor}>R$ {produto.price}</Text>
+      </View>
+      <View style={styles.boxDescricao}>
+        <Text ellipsizeMode="tail" numberOfLines={1} style={styles.textDescricao}>{produto.description}</Text>
+      </View>
+      <BotaoIncremento quantidade={quantidade} add={add} remover={remover} />
+    </View>
+  );
 }
+

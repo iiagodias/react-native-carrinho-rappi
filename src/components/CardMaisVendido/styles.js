@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     boxImagem:{
-        width: 150,
-        height: 150,
+        width: 120,
+        height: 120,
         alignItems: "center"
     },
     imagem:{

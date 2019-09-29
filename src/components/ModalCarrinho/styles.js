@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.32,
         shadowRadius: 5.46,
+        borderRadius: 5
     },
     tipoEndereco:{
         flexDirection: "row"
@@ -152,6 +153,16 @@ const styles = StyleSheet.create({
         color: "#ffff",
         fontFamily: 'Montserrat-Medium',
         fontSize: 18,
+    },
+    boxNenhum:{
+        padding: 50,
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    txtCesta:{
+        color: "#696969",
+        fontFamily: 'Montserrat-Medium',
+        fontSize: 15
     }
 });
 

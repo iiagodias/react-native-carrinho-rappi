@@ -20,15 +20,15 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     boxLeft:{
-        width: "25%",
+        width: "30%",
         alignItems: "flex-start"
     },
     boxCenter:{
-        width: "50%",
+        width: "40%",
         alignItems: "center"
     },
     boxRight:{
-        width: "25%",
+        width: "30%",
         alignItems: "flex-end"
     },
     boxQuantidade:{

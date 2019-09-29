@@ -1,30 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import  styles from './styles';
+import styles from './styles';
 
-export default class BotaoIncremento extends Component {
-  render() {
+export default function BotaoIncremento(props) {
 
-    const {quantidade} = this.props;
+  const { quantidade, add, remover } = props;
 
-    return (
-        <View style={styles.container}>
-          {quantidade != 0 ?
-            <View style={[styles.box, {justifyContent: "space-between"}]}>
-              <TouchableOpacity style={styles.bnt}>
-                <Text style={styles.bntText}>-</Text>
-              </TouchableOpacity>
-              <Text style={styles.textQuantidade}>4</Text>
-              <TouchableOpacity style={styles.bnt}>
-                <Text style={styles.bntText}>+</Text>
-              </TouchableOpacity>
-            </View>
-          :
-            <TouchableOpacity style={[styles.box, {justifyContent: "center"}]}>
-              <Text style={styles.bntAdicionar}>Adicionar</Text>
-            </TouchableOpacity>
-          }
+  return (
+    <View style={styles.container}>
+      {quantidade != 0 ?
+        <View style={[styles.box, { justifyContent: "space-between" }]}>
+          <TouchableOpacity style={styles.bnt} onPress={remover}>
+            <Text style={styles.bntText}>-</Text>
+          </TouchableOpacity>
+          <Text style={styles.textQuantidade}>{quantidade}</Text>
+          <TouchableOpacity style={styles.bnt} onPress={add}>
+            <Text style={styles.bntText}>+</Text>
+          </TouchableOpacity>
         </View>
-    );
-  }
+        :
+        <TouchableOpacity onPress={add} style={[styles.box, { justifyContent: "center" }]}>
+          <Text style={styles.bntAdicionar}>Adicionar</Text>
+        </TouchableOpacity>
+      }
+    </View>
+  );
 }
+

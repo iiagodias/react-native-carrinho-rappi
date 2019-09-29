@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     boxImagem:{
         width: "30%",
         height: 100,
+        padding: 10,
         alignItems: "center"
     },
     imagem:{

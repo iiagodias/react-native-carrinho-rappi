@@ -1,26 +1,36 @@
-import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 import  styles from './styles';
+import { useSelector } from 'react-redux';
 
+export default function BotaoVerCesta(props) {
 
-export default class BotaoVerCesta extends Component {
-  render() {
+    const {onPress} = props;
+
+    const valorTotal = useSelector(state => {
+      return state.data.valorTotal;
+    });
+
+    const total = useSelector(state => {
+      return state.data.total;
+    });
+
     return (
         <View style={styles.container}>
-          <View style={styles.botao}>
+          <TouchableOpacity onPress={onPress} style={styles.botao}>
             <View style={styles.boxLeft}>
               <View style={styles.boxQuantidade}>
-                <Text style={styles.textQuantidade}>4</Text>
+                <Text style={styles.textQuantidade}>{total}</Text>
               </View>
             </View>
             <View style={styles.boxCenter}>
               <Text style={styles.txtVer}>Ver cesta</Text>
             </View>
             <View style={styles.boxRight}>
-              <Text style={styles.txtValor}>R$ 25,85</Text>
+              <Text style={styles.txtValor}>R$ {valorTotal}</Text>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
     );
   }
-}
+
