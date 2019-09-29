@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.5)'
     },
     topo:{
-        height: "15%",
+        height: "10%",
     },
     bntFechar:{
         padding: 10,
@@ -31,6 +31,38 @@ const styles = StyleSheet.create({
     box:{
         padding: 15  
     },
+    linePrime:{
+        width: "100%",
+        backgroundColor: "#FA334A",
+        padding: 5,
+        paddingLeft: 20,
+        paddingRight: 20,
+        justifyContent: "space-between",
+        flexDirection: "row",
+        alignItems: "center",  
+    },
+    imagem:{
+        width: 40,
+        height: 40,
+        resizeMode: "contain"
+    },
+    infoPrime:{
+        width: "50%",
+        padding: 10,
+    },
+    txtPrime:{
+        textAlign: "center",
+        color: "#FFFF",
+        fontFamily: 'Montserrat-Light'
+    },
+    boldPrime:{
+        fontFamily: 'Montserrat-Bold'
+    },
+    txtInscreva:{
+        textDecorationLine: 'underline',
+        color: "#ffff",
+        fontFamily: 'Montserrat-Bold',
+    },
     boxTotal:{
         padding: 10
     },
@@ -53,7 +85,10 @@ const styles = StyleSheet.create({
     },
     boxEndereco:{
         padding: 15,
-        flexDirection: "row"
+        flexDirection: "row",
+        borderBottomColor: "rgba(207, 207, 207, 0.2)",
+        borderBottomWidth: 2,
+        paddingBottom: 10
     },
     infoEndereco:{
         width: "70%",
@@ -84,13 +119,39 @@ const styles = StyleSheet.create({
         fontSize: 15
     },
     dadosCarrinho:{
-        borderBottomColor: "rgba(207, 207, 207, 0.2)",
-        borderBottomWidth: 2,
-        paddingBottom: 10
+      
     },
     boxProdutos:{
         backgroundColor: "rgba(207, 207, 207, 0.1)",
         flex: 1
+    },
+    boxEsvaziar:{
+        alignItems:"center",
+        padding: 20,
+        backgroundColor: "rgba(207, 207, 207, 0.1)",
+    },
+    textEsvaziar:{
+        color: "#828282",
+        fontFamily: 'Montserrat-Medium',
+        fontSize: 18,
+        textDecorationLine: 'underline',
+    },
+    boxBntContinuar:{
+        alignItems: "center",
+        padding: 10,
+        backgroundColor: "rgba(207, 207, 207, 0.1)",
+    },
+    bntContinuar:{
+        backgroundColor: "#2ecc71",
+        width: "95%",
+        padding: 10,
+        alignItems: "center",
+        borderRadius: 5
+    },
+    txtContinuar:{
+        color: "#ffff",
+        fontFamily: 'Montserrat-Medium',
+        fontSize: 18,
     }
 });
 
