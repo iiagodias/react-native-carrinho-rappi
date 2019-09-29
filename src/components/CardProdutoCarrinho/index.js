@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, Image } from 'react-native';
 import BotaoIncremento from '../BotaoIncremento';
 import { useDispatch, useSelector } from 'react-redux';
-import  styles from './styles';
+import styles from './styles';
 import addProduto from '../../actions/addProduto';
 import _ from "lodash";
 import removerProduto from '../../actions/removerProduto'
 
-export default function CardProdutoCarrinho(props){
+export default function CardProdutoCarrinho(props) {
 
   const { produto } = props;
 
@@ -19,7 +19,7 @@ export default function CardProdutoCarrinho(props){
     return produtoEspecifico.quantidade;
   });
 
-  
+
 
   const dispatch = useDispatch();
 
@@ -32,18 +32,18 @@ export default function CardProdutoCarrinho(props){
 
 
   return (
-      <View style={styles.container}>
-        <View style={styles.boxImagem}>
-          <Image style={styles.imagem} source={{uri: produto.image}} />
-        </View>
-        <View style={styles.boxinfo}>
-          <Text numberOfLines={2} style={styles.tituloProduto}>{produto.description}</Text>
-          <Text style={styles.txtValor}>R$ {produto.price}</Text>
-        </View>
-        <View style={styles.boxBotao}>
-          <BotaoIncremento quantidade={quantidade} add={add} remover={remover} />
-        </View>
+    <View style={styles.container}>
+      <View style={styles.boxImagem}>
+        <Image style={styles.imagem} source={{ uri: produto.image }} />
       </View>
+      <View style={styles.boxinfo}>
+        <Text numberOfLines={2} style={styles.tituloProduto}>{produto.description}</Text>
+        <Text style={styles.txtValor}>R$ {produto.price}</Text>
+      </View>
+      <View style={styles.boxBotao}>
+        <BotaoIncremento quantidade={quantidade} add={add} remover={remover} />
+      </View>
+    </View>
   );
 }
 

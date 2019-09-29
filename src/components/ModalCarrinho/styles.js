@@ -31,33 +31,6 @@ const styles = StyleSheet.create({
     box:{
         padding: 15  
     },
-    linePrime:{
-        width: "100%",
-        backgroundColor: "#FA334A",
-        padding: 5,
-        paddingLeft: 20,
-        paddingRight: 20,
-        justifyContent: "space-between",
-        flexDirection: "row",
-        alignItems: "center",  
-    },
-    imagem:{
-        width: 40,
-        height: 40,
-        resizeMode: "contain"
-    },
-    infoPrime:{
-        width: "50%",
-        padding: 10,
-    },
-    txtPrime:{
-        textAlign: "center",
-        color: "#FFFF",
-        fontFamily: 'Montserrat-Light'
-    },
-    boldPrime:{
-        fontFamily: 'Montserrat-Bold'
-    },
     txtInscreva:{
         textDecorationLine: 'underline',
         color: "#ffff",
@@ -75,53 +48,6 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontFamily: 'Montserrat-Bold'
     },
-    txtEndereco:{
-        color: "#363636",
-        fontFamily: 'Montserrat-Medium',
-        fontSize: 18,
-        justifyContent: "space-between",
-        paddingTop: 5,
-        paddingBottom: 5
-    },
-    boxEndereco:{
-        padding: 15,
-        flexDirection: "row",
-        borderBottomColor: "rgba(207, 207, 207, 0.2)",
-        borderBottomWidth: 2,
-        paddingBottom: 10
-    },
-    infoEndereco:{
-        width: "70%",
-        padding: 10
-    },
-    infoMapa:{
-        width: "28%",
-        height: "100%",
-        backgroundColor: "#fff",
-        elevation: 10,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.32,
-        shadowRadius: 5.46,
-        borderRadius: 5
-    },
-    tipoEndereco:{
-        flexDirection: "row"
-    },
-    iconeTipo:{
-        marginLeft: 5
-    },
-    txtTipo:{
-        color: "#828282",
-        fontFamily: 'Montserrat-Medium',
-        fontSize: 15
-    },
-    dadosCarrinho:{
-      
-    },
     boxProdutos:{
         backgroundColor: "rgba(207, 207, 207, 0.1)",
         flex: 1
@@ -136,23 +62,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat-Medium',
         fontSize: 18,
         textDecorationLine: 'underline',
-    },
-    boxBntContinuar:{
-        alignItems: "center",
-        padding: 10,
-        backgroundColor: "rgba(207, 207, 207, 0.1)",
-    },
-    bntContinuar:{
-        backgroundColor: "#2ecc71",
-        width: "95%",
-        padding: 10,
-        alignItems: "center",
-        borderRadius: 5
-    },
-    txtContinuar:{
-        color: "#ffff",
-        fontFamily: 'Montserrat-Medium',
-        fontSize: 18,
     },
     boxNenhum:{
         padding: 50,

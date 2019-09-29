@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, Image } from 'react-native';
 import BotaoIncremento from '../BotaoIncremento';
 import styles from './styles';
@@ -10,14 +10,14 @@ import removerProduto from '../../actions/removerProduto'
 export default function CardProduto(props) {
   const { produto } = props;
 
-  const quantidade =  useSelector(state => {
-    const produtoEspecifico  = _.find(state.data.produtos, {id: produto.id});
-    if (!produtoEspecifico){
+  const quantidade = useSelector(state => {
+    const produtoEspecifico = _.find(state.data.produtos, { id: produto.id });
+    if (!produtoEspecifico) {
       return 0
     }
     return produtoEspecifico.quantidade;
   });
-  
+
   const dispatch = useDispatch();
 
   function add() {

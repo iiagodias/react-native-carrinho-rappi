@@ -1,17 +1,21 @@
 import React from 'react';
-import { View, Text, Modal, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { View, Text, Modal, TouchableOpacity, ScrollView } from 'react-native';
 import CardProdutoCarrinho from "../CardProdutoCarrinho";
+import CardEndereco from "../CardEndereco";
+import LinhaPrime from '../LinhaPrime';
+import BotaoContinuar from '../BotaoContinuar';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import Icone from 'react-native-vector-icons/FontAwesome5';
 import styles from './styles';
 import { useSelector, useDispatch } from 'react-redux';
 import esvaziarCarrinho from "../../actions/esvaziarCarrinho";
 
+
 export default function ModalCarrinho(props) {
-  
+
   const { visible, close } = props;
 
-  const produtos = useSelector(state =>{
+  const produtos = useSelector(state => {
     return state.data.produtos;
   });
 
@@ -36,7 +40,6 @@ export default function ModalCarrinho(props) {
             <Icon color="#ffff" size={35} name="close" />
           </TouchableOpacity>
         </View>
-
         <View style={styles.container}>
           <View style={styles.box}>
             <View style={styles.boxTotal}>
@@ -44,55 +47,28 @@ export default function ModalCarrinho(props) {
               <Text style={styles.txtValor}>R$ {valorTotal}</Text>
             </View>
           </View>
-          <View style={styles.linePrime}>
-            <Image style={styles.imagem} source={require("../../assets/image/prime.png")} />
-            <View style={styles.infoPrime}>
-              <Text style={styles.txtPrime}>Taxa de entrega com <Text style={styles.boldPrime}>RappiPrime R$ 0,00</Text></Text>
-            </View>
-            <Text style={styles.txtInscreva}>Inscreva-se aqui</Text>
-          </View>
-
+          <LinhaPrime />
           <ScrollView>
-            <View style={styles.boxEndereco}>
-              <View style={styles.infoEndereco}>
-                <Text style={styles.txtSubtitulo}>ENDEREÇO DE ENTREGA</Text>
-                <Text numberOfLines={1} style={styles.txtEndereco}>Condominio do Edficio Tk Tower</Text>
-                <View style={styles.tipoEndereco}>
-                  <Text style={styles.txtTipo}>Trabalho</Text>
-                  <Icone style={styles.iconeTipo} color="#828282" size={20} name="briefcase" />
-                </View>
-
-              </View>
-              <View style={styles.infoMapa}></View>
-            </View>
-
-
+            <CardEndereco />
             <View style={styles.boxProdutos}>
-              {produtos.map(item=>
+              {produtos.map(item =>
                 <CardProdutoCarrinho key={item.id} produto={item} />
               )}
             </View>
-              
             {produtos.length ?
               <View style={styles.boxEsvaziar}>
-                <TouchableOpacity onPress={() =>esvaziar()}>
+                <TouchableOpacity onPress={() => esvaziar()}>
                   <Text style={styles.textEsvaziar}>Esvaziar</Text>
                 </TouchableOpacity>
               </View>
-            :
+              :
               <View style={styles.boxNenhum}>
                 <Icone color="#B5B5B5" size={60} name="shopping-basket" />
                 <Text style={styles.txtCesta}>Sua cesta esta vazia</Text>
               </View>
             }
           </ScrollView>
-
-          <View style={styles.boxBntContinuar}>
-            <TouchableOpacity style={styles.bntContinuar}>
-              <Text style={styles.txtContinuar}>Continuar</Text>
-            </TouchableOpacity>
-          </View>
-
+          <BotaoContinuar />
         </View>
       </View>
     </Modal>

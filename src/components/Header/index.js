@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, TextInput, Text, ImageBackground } from 'react-native';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 export default function Header() {
 
-  const total =  useSelector(state => {
+  const total = useSelector(state => {
     return state.data.total;
   });
 
