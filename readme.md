@@ -27,7 +27,7 @@ adb -s <device name> reverse tcp:3000 tcp:3000
 react-native run-android
 ```
 
-- Product.json
+## Product.json
 ```
 {
   "products": [
