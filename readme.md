@@ -7,20 +7,20 @@ A seguinte aplicação, performa algumas funcionalidades de um aplicativo *Ecomm
 
 Para buildar o projeto, é necessário seguir os seguintes passos:
 - Clonar o projeto na máquina;
-- Instalar as dependências do projeto através de um gestor de dependência de sua preferência (yarn, npm ...);
+- Instalar as dependências do projeto através de um gestor de dependência de sua preferência (yarn, npm, ...);
 - Instalar o json-server, para mockar a api (https://github.com/typicode/json-server);
 - Iniciar o servidor através do comando abaixo, no diretório onde seu arquivo json (com os dados que se encontram no final desse manual) se encontra:
 ```sh
 json-server --watch product.json
 ```
 - Ter o ambiente configurado para React Native (https://facebook.github.io/react-native/docs/getting-started);
-- Conectar emulador na máquina, caso esteja usando, com o comando::
+- Conectar emulador na máquina, caso esteja usando, com o comando:
 ```sh
 adb connect 127.0.0.1:porta
 ```
 Obs: caso esteja utilizando um dispositivo físico, executar o comando abaixo para dar bind nas portas do dispositivo e da máquina, para uso do json-server:
 ```sh
-adb -s <device name> reverse tcp:8081 tcp:8081
+adb -s <device name> reverse tcp:3000 tcp:3000
 ```
 - Buildar aplicação React Native, através do comando:
 ```sh
