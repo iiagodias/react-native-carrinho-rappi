@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, ScrollView, StatusBar } from 'react-native';
+import { View, ScrollView, StatusBar, Alert } from 'react-native';
 import CardProduto from '../../components/CardProduto';
 import Barra from '../../components/Barra';
 import Header from '../../components/Header';
@@ -33,9 +33,10 @@ export default function Home() {
       .then(res => {
         setLoading(false);
         setData(res.data.sort(compare));
-      }).catch(err =>
+      }).catch(err => {
+        Alert.alert("Erro ao conectar com o servidor.");
         setLoading(false)
-      );
+      });
   }, []);
 
   return (
