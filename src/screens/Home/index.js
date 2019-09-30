@@ -15,7 +15,7 @@ import _ from 'lodash';
 
 export default function Home() {
   const [data, setData] = useState([]);
-  const [texto, setTexto] = useState([]);
+  const [texto, setTexto] = useState("");
   const [modal, setModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
