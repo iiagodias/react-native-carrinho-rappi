@@ -1,3 +1,7 @@
+# DEMO
+
+![](./assets/image/mo.gif)
+
 # Mock Rappi
 
 A seguinte aplicação, performa algumas funcionalidades de um aplicativo *Ecommerce*, onde se pode utilizar as seguintes funções:
