@@ -1,6 +1,6 @@
-# DEMO
+# Demo
 
-![](./assets/image/mo.gif)
+![](./src/assets/image/mo.gif)
 
 # Mock Rappi
 
