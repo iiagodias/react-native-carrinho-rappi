@@ -45,27 +45,30 @@ export default function Home() {
       <Loading visible={loading} />
       <View style={styles.container}>
         <Header search={(text)=> setSearch(text)} />
-        <Barra texto="Ofertas" />
-        <View>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrolProduto}>
-            {_.filter(data, function(o) {
-               return o.description.toLowerCase().includes(texto.toLowerCase());
-            }).map((item) =>
-              <CardProduto produto={item} key={item.id} quantidade={0} />
-            )}
-          </ScrollView>
-        </View>
-        <Barra texto="Produtos Mais Vendidos" />
-        <View>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrolProduto}>
-            {data.map((item) =>
-              <CardMaisVendido key={item.id} imagem={item.image} descricao={item.description} />
-            )}
-          </ScrollView>
-        </View>
+        <ScrollView>
+          <Barra texto="Ofertas" />
+          <View>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrolProduto}>
+              {_.filter(data, function(o) {
+                return o.description.toLowerCase().includes(texto.toLowerCase());
+              }).map((item) =>
+                <CardProduto produto={item} key={item.id} quantidade={0} />
+              )}
+            </ScrollView>
+          </View>
+          <Barra texto="Produtos Mais Vendidos" />
+          <View>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrolProduto}>
+              {data.map((item) =>
+                <CardMaisVendido key={item.id} imagem={item.image} descricao={item.description} />
+              )}
+            </ScrollView>
+          </View>
+        </ScrollView>
         <BotaoVerCesta onPress={() => setModal(true)} />
         <ModalCarrinho visible={modal} close={() => setModal(false)} />
       </View>
+      
     </Provider>
   );
 }
